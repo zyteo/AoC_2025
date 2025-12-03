@@ -33,7 +33,10 @@ def dial_counter(current, input):
 def main():
     current = 50
     total_counter = 0
-    inputs = ["R31"]
+    # read input file
+    with open("./input", "r") as f:
+        inputs = f.read().splitlines()
+    
     for input in inputs:
         current, counter = dial_counter(current, input)
         total_counter += counter
